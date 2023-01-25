@@ -1,0 +1,255 @@
+/* GENERAL FEATURES */
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+    --main-padding: 6px;
+    --main-radius: 5px;
+    --vinho-escuro: #360000;
+    --vinho-fundo: #6A0811;
+    --amarelo-texto: #D29A46;
+    --branco-texto: #FFF9EF;
+    --sombra-escura: #280000;
+}
+
+body {
+    background-color: var(--vinho-escuro);
+    color: var(--amarelo-texto);
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 1.5fr 2fr 0.3fr;
+    grid-template-areas:
+        'nav'
+        'main'
+        'about'
+        'footer';
+    grid-row-gap: 0rem;
+}
+
+/* NAV BAR FEATURES */
+
+.nav__header {
+    width: 100%;
+    padding: 8px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-area: nav;
+    filter: drop-shadow(0px 5px 5px #280000);
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+    ;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--amarelo-texto);
+    font-size: 12px;
+}
+
+/* FIM NAV BAR FEATURES */
+
+/* MAIN BANNER FEATURES */
+
+header {
+    width: 100%;
+    background-image: url("assets/images/BG_tile.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: 1fr;
+    grid-area: main;
+    filter: drop-shadow(0px -5px 5px #280000);
+}
+
+.div__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainLogo {
+    margin: 20px;
+    width: 35%;
+}
+
+.div__botoes {
+    width: 100%;
+    padding: 8px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.div__botoes>ul li {
+    width: 100%;
+    padding: 8px 2%;
+    display: flex;
+    align-items: center;
+    width: 350px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    white-space: normal;
+}
+
+#logo__header {
+    vertical-align: middle;
+    padding-right: 6px;
+    padding-left: 0px;
+}
+
+.div__botoes>ul li a {
+    list-style: none;
+    text-decoration: none;
+    list-style: none;
+    background-color: var(--amarelo-texto);
+    border-radius: 5px;
+    color: var(--vinho-escuro);
+    font-weight: 550;
+    padding: 1em 2em;
+    filter: drop-shadow(2px 2px 2px var(--vinho-escuro));
+}
+
+/* FIM MAIN BANNER FEATURES */
+
+/* ABOUT FEATURES */
+
+.about {
+    width: 100%;
+    background-color: #360000;
+    grid-area: about;
+    padding: 0px 150px 50px;
+    filter: drop-shadow(0px 0px 10px #280000);
+}
+
+.div__about>h2 {
+    padding: 32px 48px 0px;
+}
+
+.div__about>p {
+    font-size: 14px;
+    padding: 32px 48px 32px;
+    line-height: 24px;
+}
+
+/* FIM ABOUT FEATURES */
+
+/* FOOTER FEATURES */
+
+footer {
+    background-image: url("assets/images/BG_tile.jpg");
+    grid-area: footer;
+}
+
+.nav__footer {
+    width: 100%;
+    padding: 32px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: nav;
+}
+
+/* FIM FAQ FEATURES */
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 700px) {
+    .mainLogo {
+        margin: 20px;
+        width: 65%;
+    }
+
+    .about {
+        grid-area: about;
+        padding: 0px 0px 50px;
+    }
+
+    .div__features>ul {
+        display: grid;
+        height: 25vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-row-gap: 0;
+    }
+
+    .div__photos>ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-row-gap: 0;
+    }
+
+    .ul__photos {
+        list-style-type: none;
+        padding: 0px 0px 20px;
+    }
+
+    .minifoto {
+        width: 70%;
+    }
+
+    #btpreviousModal {
+        top: 360px;
+        left: 20px;
+        font-size: 28px;
+    }
+
+    #btNextModal {
+        top: 360px;
+        right: 20px;
+        font-size: 28px;
+    }
+
+    .FAQ {
+        padding: 0px 50px 0px;
+    }
+
+    .div__faq>ul {
+        display: grid;
+        height: 25vh;
+        grid-template-columns: 1fr;
+        grid-row-gap: 0;
+    }
+
+    .ul__faq {
+        list-style-type: none;
+        padding: 0px 0px 0px;
+    }
+
+    .ul__faq>li {
+        padding: 0px 0px 0px;
+    }
+
+
+}
+
+/* FIM MEDIA QUERIES */
+
+
+
+/* GENERAL COMENTS
+
+DEFINE CONDITION TO SCREEN
+
+
+CALL VAR Example:
+border-radius: var(--main-radius);
+padding: var(--main-padding);
+
+*/

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <!--link rel="stylesheet" href="reset.css"-->
+    <link rel="stylesheet" href="style.css">
+    <title>Game Cabaret Cariño</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        function F_modal(img, id) {
+            var modalJ = document.getElementById("janelaModal");
+            var modalI = document.getElementById("imgModal");
+            var modalBP = document.getElementById("btpreviousModal");
+            var modalBN = document.getElementById("btNextModal");
+            if (id > 1) {
+                var prevId = id - 1;
+                console.log(prevId);
+                var prevImg = `/assets/images/high/foto${prevId}.jpg`;
+                console.log(prevImg);
+            } else {
+                var prevId = 1
+                var prevImg = `/assets/images/high/foto1.jpg`;
+            }
+            if (id < 8) {
+                var nextId = id + 1;
+                console.log(nextId);
+                var nextImg = `/assets/images/high/foto${nextId}.jpg`;
+                console.log(nextImg);
+            } else {
+                var nextId = 8
+                var nextImg = '/assets/images/high/foto8.jpg';
+            }
+
+            modalJ.style.display = "block";
+            modalI.src = img;
+            modalI.onclick = function () {
+                modalJ.style.display = "none";
+            }
+            modalBP.onclick = function () {
+                modalBN.style.display = "block";
+                if (id > 1) {
+                    F_modal(prevImg, prevId);
+                } else {
+                    modalBP.style.display = "none";
+                }
+            }
+            modalBN.onclick = function () {
+                modalBP.style.display = "block";
+                if (id < 8) {
+                    F_modal(nextImg, nextId);
+                } else {
+                    modalBN.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+
+<div class="container">
+    <nav class="nav__header">
+        <img src="assets/images/Patreon___Profile_Image 1.png" alt="Estudio Logo" class="navLogo">
+        <ul>
+            <li><a href="index.html">about</a></li>
+            <li><a href="#">news</a></li>
+            <li><a href="#">download</a></li>
+            <li><a href="contact.html">contact us</a></li>
+            <li><a href="https://discord.gg/BSPsfaabUe" target="_blank">discord</a></li>
+            <li><a href="#" target="_blank">patreon</a></li>
+        </ul>
+    </nav>
+
+    <header class="banner">
+        <div class="div__logo">
+            <img src="assets/images/carinoLogos(comDropshadow).png" alt="Jogo Cabaré Cariño" class="mainLogo">
+        </div>
+        <div class="div__botoes">
+            <ul class="lista__botoes">
+                <li><a href="#" class="container__botao"><img src="/assets/images/5a5a 1.png"
+                            id="logo__header">&nbsp;BECOME A PATREON</a></li>
+                <li><a href="#" class="container__botao">&ensp;&emsp;<img
+                            src="/assets/images/download_for_offline_FILL1_wght400_GRAD0_opsz48 1.png"
+                            id="logo__header"> DOWNLOAD&nbsp;&ensp;&emsp;&ensp;</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="about">
+        <div class="div__about">
+            <h2>About Cabaré Cariño</h2>
+            <p>
+                Cabaret Cariño is a unique adult striptease pageant game. Two girls on stage, using all their sensuality
+                and pole-dancing skills to mercilessly tease and entice the audience. Strippers, of all kinds and
+                styles, each one more delicious than the other: pinups, schoolgirls, dominatrixes, gamers, burlesque…
+                the choice is yours.
+                Win contests, rise in your career, and make your path to compete in the mythical, erotic, inviting – and
+                irresistible –  Cabaret Cariño!
+            </p>
+        </div>
+        <div class="div__features">
+            <h3>Features</h3>
+            <ul class="ul__features">
+                <li>&#9733; Versus Player</li>
+                <li>&#9733; Campaign Mode</li>
+                <li>&#9733; Customizable Character</li>
+                <li>&#9733; Burlesque</li>
+                <li>&#9733; Fetiche</li>
+                <li>&#9733; Striptease</li>
+                <li>&#9733; Win Contests</li>
+                <li>&#9733; Raise your career</li>
+                <li>&#9733; Enhance your skills</li>
+            </ul>
+        </div>
+    </main>
+
+    <section class="photos">
+        <div class="div__photos">
+            <ul class="ul__photos">
+                <li><img src="/assets/images/high/foto1.jpg" class="minifoto" id="minifoto1"
+                        onclick="F_modal('/assets/images/high/foto1.jpg',1)"></li>
+                <li><img src="/assets/images/high/foto2.jpg" class="minifoto" id="minifoto2"
+                        onclick="F_modal('/assets/images/high/foto2.jpg',2)"></li>
+                <li><img src="/assets/images/high/foto3.jpg" class="minifoto" id="minifoto3"
+                        onclick="F_modal('/assets/images/high/foto3.jpg',3)"></li>
+                <li><img src="/assets/images/high/foto4.jpg" class="minifoto" id="minifoto4"
+                        onclick="F_modal('/assets/images/high/foto4.jpg',4)"></li>
+                <li><img src="/assets/images/high/foto6.jpg" class="minifoto" id="minifoto5"
+                        onclick="F_modal('/assets/images/high/foto6.jpg',5)"></li>
+                <li><img src="/assets/images/high/foto7.jpg" class="minifoto" id="minifoto6"
+                        onclick="F_modal('/assets/images/high/foto7.jpg',6)"></li>
+                <li><img src="/assets/images/high/foto11.jpg" class="minifoto" id="minifoto7"
+                        onclick="F_modal('/assets/images/high/foto11.jpg',7)"></li>
+                <li><img src="/assets/images/high/foto13.jpg" class="minifoto" id="minifoto8"
+                        onclick="F_modal('/assets/images/high/foto13.jpg',8)"></li>
+        </div>
+        <div id="janelaModal">
+            <span id="btFecharModal">X</span>
+            <span id="btpreviousModal">&#10094;</span>
+            <span id="btNextModal">&#10095;</span>
+            <img id="imgModal">
+        </div>
+    </section>
+
+    <section class="FAQ">
+        <div class="div__faq">
+            <h3>FAQ</h3>
+            <ul class="ul__faq">
+                <li>
+                    <p class="p__question">How long is the term of subscription?</p>
+                    <p class="p__answer">When you pay for the patreon support, you get a 1 mounth free to use benefit.
+                    </p>
+                </li>
+                <li>
+                    <p class="p__question">How long is the term of subscription?</p>
+                    <p class="p__answer">When you pay for the patreon support, you get a 1 mounth free to use benefit.
+                    </p>
+                </li>
+                <li>
+                    <p class="p__question">How long is the term of subscription?</p>
+                    <p class="p__answer">When you pay for the patreon support, you get a 1 mounth free to use benefit.
+                    </p>
+                </li>
+                <li>
+                    <p class="p__question">How long is the term of subscription?</p>
+                    <p class="p__answer">When you pay for the patreon support, you get a 1 mounth free to use benefit.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <nav class="nav__footer">
+            <ul>
+                <li><a href="#">about</a></li>
+                <li><a href="#">news</a></li>
+                <li><a href="#">download</a></li>
+                <li><a href="#">contact us</a></li>
+                <li><a href="#">discord</a></li>
+                <li><a href="#">patreon</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</div>
