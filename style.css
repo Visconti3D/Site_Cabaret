@@ -142,7 +142,10 @@ header {
 .div__video {
     display: flex;
     justify-content: center;
-    padding: 50px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 0px;
 }
 
 #video {
@@ -152,6 +155,35 @@ header {
     border-width: 2px;
     border-color: #D29A46;
     filter: drop-shadow(0px 5px 5px #280000);
+}
+
+.div__volume {
+    padding-top: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 0px;
+}
+
+input[type="range"] {
+    right: 0px;
+    height: 3px !important;
+    background: #280000;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 10%;
+    overflow: visible !important;
+}
+
+input[type="range"] {
+    display: block;
+    width: 120px;
+}
+
+input {
+    border-radius: 1px !important;
 }
 
 
@@ -337,7 +369,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-area: nav;
+    grid-area: footer;
 }
 
 /* FIM FAQ FEATURES */
@@ -398,14 +430,14 @@ footer {
     }
 
     .FAQ {
-        padding: 0px 50px 0px;
+        height: 180vh;
     }
 
     .div__faq>ul {
         display: grid;
-        height: 25vh;
+        padding: 0px 50px 0px;
         grid-template-columns: 1fr;
-        grid-row-gap: 0;
+        grid-row-gap: 30px;
     }
 
     .ul__faq {
@@ -414,7 +446,7 @@ footer {
     }
 
     .ul__faq>li {
-        padding: 0px 0px 0px;
+        padding: 0px 0px 20px;
     }
 
 

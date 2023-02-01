@@ -56,6 +56,16 @@
             }
         }
     </script>
+
+    <script>
+        function SetVolume(val) {
+            var player = document.getElementById('video');
+            console.log('Before: ' + player.volume);
+            player.volume = val / 100;
+            console.log('After: ' + player.volume);
+        }
+    </script>
+
 </head>
 
 <div class="container">
@@ -88,9 +98,18 @@
 
     <main class="about">
         <div class="div__video">
-            <video autoplay muted loop id="video">
-            <source src="/assets/videos/WhatsApp Video 2023-01-16 at 23.50.26.mp4" type="video/mp4">
+            <video autoplay loop id="video">
+                <source src="/assets/videos/CC_video2.mp4" type="video/mp4">
+            </video>
         </div>
+
+        <div class="div__volume">
+            <p>&#128361;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&#128362;</p>
+            <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)"
+                onchange="SetVolume(this.value)"></input>
+
+        </div>
+
         <div class="div__about">
             <h2>About Cabaret Cariño</h2>
             <p>
