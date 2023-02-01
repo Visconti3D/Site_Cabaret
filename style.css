@@ -40,7 +40,8 @@ body {
 
 /* NAV BAR FEATURES */
 
-.nav__header {
+.nav__header__pc {
+    display: block;
     width: 100%;
     padding: 8px 2%;
     display: flex;
@@ -50,18 +51,24 @@ body {
     filter: drop-shadow(0px 5px 5px #280000);
 }
 
-nav ul li {
+.nav__header__mobile, .barra {
+    display: none;
+}
+
+
+.nav__header__pc > ul li {
     list-style: none;
     display: inline-block;
     margin-left: 20px;
     ;
 }
 
-nav ul li a {
+.nav__header__pc > ul li a {
     text-decoration: none;
     color: var(--amarelo-texto);
     font-size: 12px;
 }
+
 
 /* FIM NAV BAR FEATURES */
 
@@ -85,6 +92,7 @@ header {
 .mainLogo {
     margin: 20px;
     width: 35%;
+    z-index: 1;
 }
 
 .div__botoes {
@@ -160,12 +168,13 @@ header {
 }
 
 .ul__features {
+    font-weight: 600;
     list-style-type: none;
     padding: 0px 48px 32px;
 }
 
 .div__roadMap {
-    display: flex;   
+    display: flex;
     justify-content: center;
     padding: 32px 48px 32px;
 }
@@ -323,14 +332,75 @@ footer {
     grid-area: nav;
 }
 
+.nav__footer > ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+    ;
+}
+
+.nav__footer > ul li a {
+    text-decoration: none;
+    color: var(--amarelo-texto);
+    font-size: 12px;
+}
+
 /* FIM FAQ FEATURES */
 
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 700px) {
-    
+
     header {
         background-image: url("assets/images/CCsite_banner_mobile.jpg");
+    }
+
+    .nav__header__pc {
+        display: none;
+    }
+
+    .nav__header__mobile {
+        display: block;
+        z-index: 2;
+        width: 100%;
+        padding: 8px 2%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        grid-area: nav;
+        filter: drop-shadow(0px 5px 5px #280000);
+    }
+
+    .barra {
+        display: block;
+        z-index: 1;
+        width: 250px;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(36, 0, 0, .95);
+        right: -130px;
+        transition: all .2s linear;
+    }
+
+    .check {
+        display: none;
+    }
+
+    #check:checked ~ .barra .nav__barra .menuLink{
+		opacity: 1;
+		margin-top: 0;
+		transition-delay: .2s;
+    }
+
+    #check:checked ~ .barra{
+        transform: translateX(100px);
+    }
+
+    #menuIcon {
+        font-size: 48px;
+        position: absolute;
+        right: 16px;
+        cursor: pointer;
     }
 
     .mainLogo {
@@ -346,8 +416,7 @@ footer {
     .div__features>ul {
         display: grid;
         height: 25vh;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-row-gap: 0;
     }
 
